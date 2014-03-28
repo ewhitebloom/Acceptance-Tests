@@ -17,7 +17,7 @@ describe "Deleting Contacts" do
 
     visit "/contacts"
     count = Contact.count
-    click_button "Destroy"
+    click_link "Destroy"
     expect(Contact.count).to eq(count - 1)
   end
 end
