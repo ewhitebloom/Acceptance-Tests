@@ -18,7 +18,7 @@ describe Contact do
       expect(contact).to be_valid
     end
 
-    it "provides a count of spottings for a given bird" do
+    it "provides a count of all contact" do
       Contact.create!(email: "launch@academy.com", subject: "launch academy", description: "launchhhh", first: "launch", last: "academy")
       Contact.create!(email: "launch@academy.com", subject: "launch academy", description: "launchhhh", first: "launch", last: "academy")
       Contact.create!(email: "launch@academy.com", subject: "launch academy", description: "launchhhh", first: "launch", last: "academy")
