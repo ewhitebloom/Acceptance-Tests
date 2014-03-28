@@ -12,7 +12,7 @@ end
 
 describe "Creating Contacts" do
   it "displays the contact text after creation" do
-    visit "/events"
+    visit "/contacts"
     click_link "New Contact"
     email = "launch@academy.com"
     fill_in "Email", with: email
@@ -21,14 +21,10 @@ describe "Creating Contacts" do
     fill_in "First", with: "Launch"
     fill_in "Last", with: "Academy"
     click_button "Create Contact"
+    expect(page).to have_content email
     expect(Contact.count).to eq(1)
     expect(Contact.last.email).to eq(email)
   end
-end
-
-it "sees contacts" do
- visit '/contacts'
- expect(page).to have_content()
 end
 
 end
