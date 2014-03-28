@@ -21,8 +21,17 @@ describe "Creating Contacts" do
     fill_in "First", with: "Launch"
     fill_in "Last", with: "Academy"
     click_button "Create Contact"
+    visit "/contacts"
+    click_link "New Contact"
+    email = "launch@academy.com"
+    fill_in "Email", with: email
+    fill_in "Subject", with: "Hi"
+    fill_in "Description", with: "Just saying hi."
+    fill_in "First", with: "Launch"
+    fill_in "Last", with: "Academy"
+    click_button "Create Contact"
     expect(page).to have_content email
-    expect(Contact.count).to eq(1)
+    expect(Contact.count).to eq(2)
     expect(Contact.last.email).to eq(email)
   end
 end
